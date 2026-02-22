@@ -1,4 +1,5 @@
-FROM jenkins/jenkins:latest-jdk17
+#FROM jenkins/jenkins:latest-jdk17
+FROM jenkins/jenkins:lts-jdk21
 USER root
 RUN apt-get update && apt-get install -y lsb-release ca-certificates curl && \
     install -m 0755 -d /etc/apt/keyrings && \
