@@ -53,6 +53,7 @@ services:
       - DOCKER_TLS_VERIFY=1
   sonarqube:
     image: sonarqube:latest
+    restart: always
     depends_on:
       - sonardb
     environment:
@@ -71,6 +72,7 @@ services:
           - sonarqube
   sonardb:
     image: postgres:16-alpine
+    restart: always
     environment:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
